@@ -40,6 +40,13 @@ local defaults = {
   -- Shows the time between 2 frames.
   show_delta = true,
 
+  -- Show mouse coordindates.
+  show_coords = false,
+
+  -- Coordindates offest
+  x_coords_offset = 10,
+  y_coords_offset = -10,
+
   -- TODO: implement more
   
   ----------------------------------------------

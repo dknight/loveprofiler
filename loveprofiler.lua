@@ -85,7 +85,7 @@ function LoveProfiler:appendToOutput(msg, color)
   color = color or self.config.color
   self._out[#self._out + 1] = {
     ["msg"] = msg .. "\n",
-    ["color"] = color
+    ["color"] = color,
   }
 end
 
@@ -99,6 +99,10 @@ end
 -- @return number
 function LoveProfiler:getFPS()
   return love.timer.getFPS()
+end
+
+function LoveProfiler:mouse()
+  return love.mouse.getX(), love.mouse.getY()
 end
 
 --- Gets the time between 2 frames in milliseconds.
@@ -130,6 +134,15 @@ function LoveProfiler:start()
 
   if self.config.show_mem then
     self:appendToOutput(string.format("MEM: %s bytes", self:getMemoryUsage()))
+  end
+
+  -- FIXME: implement correct color and font.
+  if self.config.show_coords then
+    local x, y = self:mouse()
+    local coords = string.format("%d, %d", x, y)
+    x = x + self.config.x_coords_offset
+    y = y + self.config.y_coords_offset
+    love.graphics.print(coords, x, y)
   end
 
   if self.config.show_delta then
