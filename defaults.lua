@@ -43,7 +43,7 @@ local defaults = {
   -- Show mouse coordindates.
   show_coords = false,
 
-  -- Coordindates offest
+  -- Coordindates offest, only for canvas driver.
   x_coords_offset = 10,
   y_coords_offset = -10,
 

@@ -123,7 +123,6 @@ function LoveProfiler:start()
   local font = love.graphics.newFont(self.config.font_size)
   love.graphics.setFont(font)
 
-
   if self.config.show_os then
     self:appendToOutput(string.format("OS: %s", self:getOS()))
   end
@@ -133,16 +132,18 @@ function LoveProfiler:start()
   end
 
   if self.config.show_mem then
-    self:appendToOutput(string.format("MEM: %s bytes", self:getMemoryUsage()))
+    self:appendToOutput(string.format("MEM: %s bytes",
+        self:getMemoryUsage()))
   end
 
-  -- FIXME: implement correct color and font.
-  if self.config.show_coords then
+  if self.config.show_coords and self.config.driver == "canvas" then
+    love.graphics.setColor(self.config.color)
     local x, y = self:mouse()
     local coords = string.format("%d, %d", x, y)
     x = x + self.config.x_coords_offset
     y = y + self.config.y_coords_offset
     love.graphics.print(coords, x, y)
+    love.graphics.reset()
   end
 
   if self.config.show_delta then
