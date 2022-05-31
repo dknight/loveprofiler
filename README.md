@@ -59,7 +59,7 @@ At the moment only 2 drivers are supported: canvas and console. If driver is set
 
 There are 3 levels of messages: information, warning and error. You can add log entry like this:
 
-```
+```lua
 local LoveProfiler = require("loveprofiler.loveprofiler")
 
 function love.load()
