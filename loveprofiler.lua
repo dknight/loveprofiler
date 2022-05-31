@@ -101,6 +101,8 @@ function LoveProfiler:getFPS()
   return love.timer.getFPS()
 end
 
+-- Gets mouse coordinates.
+-- @return number, number
 function LoveProfiler:mouse()
   return love.mouse.getX(), love.mouse.getY()
 end
@@ -116,6 +118,30 @@ end
 function LoveProfiler:getMemoryUsage()
   local stats = love.graphics.getStats()
   return math.floor(collectgarbage("count") + stats.texturememory + 0.5)
+end
+
+-- Gets time duration
+-- @return number
+function LoveProfiler:getDuration()
+  return love.timer.getTime()
+end
+
+-- Formats duration
+-- @return string
+function LoveProfiler:formatDuration()
+  local f = "Duration: %02d:%02d:%02d.%03d"
+  local t = LoveProfiler:getDuration()
+  local h = t % (24 * 3600) / 3600
+
+  t = t % 3600
+  local m = t / 60
+
+  t = t % 60
+  local s = t
+
+  local ms = (s - math.floor(s)) * 1000
+
+  return string.format(f, h, m, s, ms)
 end
 
 --- Starts the profiler, should be used in love.draw() method.
@@ -148,6 +174,10 @@ function LoveProfiler:start()
 
   if self.config.show_delta then
     self:appendToOutput(string.format("Delta: %.1fms", self:getDelta()))
+  end
+
+  if self.config.show_duration then
+    self:appendToOutput(LoveProfiler:formatDuration())
   end
 
   if self.config.log_enabled then

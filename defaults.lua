@@ -40,6 +40,9 @@ local defaults = {
   -- Shows the time between 2 frames.
   show_delta = true,
 
+  -- Shows the duration of programm running
+  show_duration = true,
+
   -- Show mouse coordindates.
   show_coords = false,
 
