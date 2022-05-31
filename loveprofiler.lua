@@ -1,5 +1,5 @@
 -- LoveProfiler for Love2D Framework
--- Author: Dkight <http://www.whoop.ee>
+-- Author: Dmitri Smirnov <http://www.whoop.ee>
 -- MIT License
 -- VERSION: 1.0.0
 local defaults = require("loveprofiler.defaults")
