@@ -18,7 +18,7 @@ love2dproject/
 The most basic usage, create an instance on `love.load()` then call start() method inside `love.draw()`. 
 
 ```lua
-local LoveProfiler = require("loveprofiler.loveprofiler")
+local LoveProfiler = require("loveprofiler")
 
 function love.load()
   profiler = LoveProfiler:new() 
@@ -35,7 +35,7 @@ end
 You can find all possible configuration options with detailed description in `defaults.lua` file. You can override any option when you create a new instance.
 
 ```lua
-local LoveProfiler = require("loveprofiler.loveprofiler")
+local LoveProfiler = require("loveprofiler")
 
 function love.load()
   profiler = LoveProfiler:new{config = {
@@ -60,7 +60,7 @@ At the moment only 2 drivers are supported: canvas and console. If driver is set
 There are 3 levels of messages: information, warning and error. You can add log entry like this:
 
 ```lua
-local LoveProfiler = require("loveprofiler.loveprofiler")
+local LoveProfiler = require("loveprofiler")
 
 function love.load()
   profiler = LoveProfiler:new()
@@ -80,7 +80,7 @@ To completely disable logging set configuration property `log_enabled = false`.
 You can create as many LoveProfiler instances as you want with different configuration.
 
 ```lua
-local LoveProfiler = require("loveprofiler.loveprofiler")
+local LoveProfiler = require("loveprofiler")
 
 function love.load()
   profiler1 = LoveProfiler:new()
