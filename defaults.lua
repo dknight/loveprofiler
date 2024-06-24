@@ -50,7 +50,7 @@ local defaults = {
   x_coords_offset = 10,
   y_coords_offset = -10,
 
-  -- TODO: implement more
+  -- TODO: implement more id needed
   
   ----------------------------------------------
   -- Log options                              --
