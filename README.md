@@ -6,7 +6,7 @@ It also can log events at three levels: information, warnings
 and errors. The output of the profiler is displayed on the Löve2D canvas or
 in the console (terminal).
 
-![LoveProfiler Demo](/screenshots/demo.gif?raw=true)
+![LoveProfiler Demo](/screenshots/loveprofiled-demo.gif?raw=true)
 
 ## Installation
 
