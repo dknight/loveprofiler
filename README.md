@@ -10,7 +10,14 @@ in the console (terminal).
 
 ## Installation
 
-Installation is very easy. Just use git clone or copy directory `loveprofiler` into your game's directory where file `main.lua` is.
+Installation is very easy. Just use git clone or copy directory `loveprofiler`
+into your game's directory where file `main.lua` is.
+
+```sh
+git clone https://github.com/dknight/loveprofiler
+```
+
+Example project structure:
 
 ```
 love2dproject/
